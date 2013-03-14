@@ -1,0 +1,14 @@
+{
+    "name": "Unisim",
+    "version": "0.0.1",
+    "dependencies": {
+        "socket.io": "0.9.x",
+        "socket.io-client": "0.9.x",
+        "express": "3.0.x",
+        "mocha": "1.6.x",
+        "jsdoc3": "https://github.com/jsdoc3/jsdoc/tarball/master"
+    },
+    "scripts": {
+        "test": "make test"
+    }
+}

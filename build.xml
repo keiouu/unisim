@@ -1,0 +1,68 @@
+<project name="University Simulator ANT Build" default="init" basedir=".">
+    <description>
+        Build
+    </description>
+
+    <!-- global properties -->
+    <property name="build.dir" location="build" />
+    <property name="jsdoc.dir" location="../website/documentation/jsdocs" />
+
+    <fileset dir="." id="alljsfiles">
+        <include name="**/*.js" />
+        <include name="**/*.html" />
+        <exclude name="**/node_modules/**" />
+    </fileset>
+
+    <!-- init is the main function -->
+    <target name="init">
+        <antcall target="clean" />
+        <antcall target="install" />
+        <antcall target="test" />
+        <antcall target="gjslint" />
+        <antcall target="tojslint" />
+        <antcall target="jsdoc" />
+    </target>
+
+
+    <!-- clean will delete current directories and make new fresh ones -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${jsdoc.dir}"/>
+        <mkdir dir="${build.dir}" />
+    </target>
+
+    <!-- Install npm modules -->
+    <target name="install" description="Install npm modules">
+        <exec executable="npm" dir="server">
+            <arg line="install" />
+        </exec>
+    </target>
+
+    <!-- Run the mocha tests -->
+    <target name="test" description="Run the mocha unit tests">
+        <exec executable="make" dir="server" output="build/mocha.tap">
+            <arg line="test-jenkins" />
+        </exec>
+    </target>
+
+    <!-- gjslint -->
+    <target name="gjslint" description="Run the GJSLint tool on JS files">
+        <pathconvert pathsep=" " property="alljsfiles.clean" refid="alljsfiles" />
+        <exec executable="python" output="build/gjslint.txt">
+            <arg line="/usr/local/bin/gjslint --check_html ${alljsfiles.clean}" />
+        </exec>
+    </target>
+
+    <!-- convert gjslint -->
+    <target name="tojslint" description="Convert the GJSLint output to jslint format">
+        <exec executable="php" output="build/jslint.xml">
+            <arg line="tools/gjsconvert.php" />
+        </exec>
+    </target>
+
+    <!-- jsdoc3 -->
+    <target name="jsdoc" description="Generate the JSDoc files">
+        <exec executable="make" dir="." />
+    </target>
+
+</project>
