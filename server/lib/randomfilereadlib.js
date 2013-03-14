@@ -26,7 +26,7 @@ exports.RandomFileReader = function(filename) {
     var fileExists = true;
 
     if (fileExists) {
-        var content = fs.readFileSync(filepath, 'utf8').split('\r\n');
+        var content = fs.readFileSync(filepath, 'utf8').match(/[^\r\n]+/g);
         var contentLength = content.length;
     } else {
         content = [];
