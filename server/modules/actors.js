@@ -116,7 +116,7 @@ exports.actors = function(game) {
         } else if (randNumber < probabilitiesNormalised[3]) {
             buildingType = 'Food';
         } else {
-            buildingType = '';
+            buildingType = 'Bar'; // Default to the bar, because that seems to be the norm
         }
 
         //If we are wanting to go to a lecture.
@@ -185,8 +185,8 @@ exports.actors = function(game) {
                 student: 'floor'
             },
             Recreational: {
-                staff: 'barStool',
-                student: 'barStool'
+                staff: 'chair',
+                student: 'chair'
             },
             Accommodation: {
                 staff: 'bed',
@@ -195,6 +195,10 @@ exports.actors = function(game) {
             Staff: {
                 staff: 'sofa',
                 student: 'floor'
+            },
+            Bar: {
+                staff: 'barStool',
+                student: 'barStool'
             }
         };
 

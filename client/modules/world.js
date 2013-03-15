@@ -208,7 +208,8 @@ exports.world = function(game) {
         sofa: loader.addImage('sofa.png'),
         wallEast: loader.addImage('wall_straight.png'),
         cornerTl: loader.addImage('corner.png'),
-        barStool: loader.addImage('barStool.png')
+        barStool: loader.addImage('barStool.png'),
+        table: loader.addImage('table.png')
     };
 
     loader.load(function() {

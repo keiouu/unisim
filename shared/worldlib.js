@@ -55,6 +55,13 @@ exports.World = function() {
             {x: 0, y: -1},
             {x: 0, y: 1}
         ]},
+        table: {cost: 10, build: false, entrances: [
+            {x: 0, y: -1},
+            {x: 0, y: 1}
+        ], exits: [
+            {x: 0, y: -1},
+            {x: 0, y: 1}
+        ]},
         bed: {cost: 10, build: false, entrances: [
             {x: -1, y: 0},
             {x: 1, y: 0}

@@ -51,7 +51,20 @@ exports.furnishAcademic = function(x, y, tl, br) {
 };
 
 /**
- * Furnish recreation (bars, cafes)
+ * Furnish bars (bars)
+ * @param {number} x The x co-ordinate to place a tile in.
+ * @param {number} y The x co-ordinate to place a tile in.
+ * @param {object} tl The top left of our floor space.
+ * @param {object} br The bottom right of our floor space.
+ * @return {String} The tile type to place in the world.
+ */
+exports.furnishBar = function(x, y, tl, br) {
+    if (y == tl.y + 1) return 'barStool';
+    return 'floor';
+};
+
+/**
+ * Furnish recreation (games, etc)
  * @param {number} x The x co-ordinate to place a tile in.
  * @param {number} y The x co-ordinate to place a tile in.
  * @param {object} tl The top left of our floor space.
@@ -59,7 +72,9 @@ exports.furnishAcademic = function(x, y, tl, br) {
  * @return {String} The tile type to place in the world.
  */
 exports.furnishRecreational = function(x, y, tl, br) {
-    if (y == tl.y + 1) return 'barStool';
+    midline = Math.ceil(tl.x + ((br.x - tl.x) / 2));
+    if (x != midline && y != br.y && y%2 == 0) return 'sofa';
+    if (x != midline && x % 2 != 0 && y != br.y && y % 2 != 0) return 'table';
     return 'floor';
 };
 

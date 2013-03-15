@@ -22,13 +22,21 @@ exports.building = function(game) {
     //add blueprints that are available from the start.
     game.buildings.addBlueprint('Bag Ette', 100, 'Food', 30);
     game.buildings.addBlueprint('Mocha Shop', 300, 'Food', 30);
+    game.buildings.addBlueprint('Fine Restaurant', 900, 'Food', 60);
 
     game.buildings.addBlueprint('Seminar Room', 30, 'Academic', 48);
     game.buildings.addBlueprint('Lecture Theatre', 10, 'Academic', 72);
+    game.buildings.addBlueprint('Library', 40, 'Academic', 290);
 
-    game.buildings.addBlueprint('Alcoholic Lager Bar', 150, 'Recreational', 30);
+    game.buildings.addBlueprint('Alcoholic Lager Bar', 150, 'Bar', 30);
+
     game.buildings.addBlueprint('Flat Flats', 50, 'Accommodation', 72);
+    game.buildings.addBlueprint('Amazing Houses', 250, 'Accommodation', 30);
+
     game.buildings.addBlueprint('Staff Room', 50, 'Staff', 48);
+
+    game.buildings.addBlueprint('Games Room', 450, 'Recreational', 30);
+    game.buildings.addBlueprint('Student Area', 10, 'Recreational', 30);
 
     /**
      * Listen to our building repository

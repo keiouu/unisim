@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with Unisim.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-exports.Types = ['Academic', 'Recreational', 'Food', 'Accommodation', 'Staff'];
+exports.Types = ['Academic', 'Recreational', 'Food', 'Accommodation', 'Staff', 'Bar'];
 
 /**
  * Building constructor

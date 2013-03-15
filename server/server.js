@@ -61,7 +61,7 @@ gameObjects.world = new worldModule.World();
  * @type {moneyModule.Money}
  */
 gameObjects.money = new moneyModule.Money();
-gameObjects.money.initialize(100000);
+gameObjects.money.initialize(1000000);
 
 /**
  * A shared actor repository.
